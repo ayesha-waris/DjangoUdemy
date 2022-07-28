@@ -3,7 +3,7 @@ from . import views
 
 
 urlpatterns = [
-    
+    path('', views.index), # triggers /challenges/
     path('<int:month>', views.months_number),
     path('<str:month>', views.months, name="month")
 ]
