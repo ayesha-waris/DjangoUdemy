@@ -6,8 +6,10 @@ from django.urls import reverse
 
 
 def months(request, month):
-    return HttpResponse(month)
+    response_data = f'<h1>{month}</h1>'
+    return HttpResponse(response_data)
 
 def months_number(request, month):
+    
     redirect_path = reverse("month", args=["month"]); #/challenges/month
     return HttpResponseRedirect(redirect_path)
