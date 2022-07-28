@@ -37,7 +37,9 @@ def index(request):
 
 
 def months(request, month):
-    return render(request, 'challenges/challenge.html')
+    return render(request, 'challenges/challenge.html', {
+        "text": month
+    })
     # response_data = render_to_string('challenges/challenge.html')
     # return HttpResponse(response_data)
 
