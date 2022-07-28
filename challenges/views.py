@@ -6,3 +6,6 @@ from django.http import HttpResponse
 
 def months(request, month):
     return HttpResponse(month)
+
+def months_number(request, month):
+    return HttpResponse('number')
