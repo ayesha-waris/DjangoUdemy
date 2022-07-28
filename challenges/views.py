@@ -4,8 +4,5 @@ from django.http import HttpResponse
 # Create your views here.
 
 
-def january(request):
-    return HttpResponse("January")
-
-def febuary(request):
-    return HttpResponse("Febuary")
+def months(request, month):
+    return HttpResponse(month)
