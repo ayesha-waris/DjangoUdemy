@@ -1,22 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
+ {% extends 'base.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Monthly Challenge</title>
-</head>
-
-<body>
+ {% block content  %}
+ <h1> hi</h1>
    <ul>
-    {% url "month" month as url%}
+     
+    {% comment %} {% url "month" month as url%} {% endcomment %}
     {% for month in months %}
-    {% comment %} <li><a href= "{% url "month" month %}" >{{ month }} </a></li> {% endcomment %}
-    <li><a href= {{url}} >{{ month }} </a></li>
+    <li><a href= "{% url "month" month %}" >{{ month }} </a></li>
+    {% comment %} <li><a href= {{url}} >{{ month }} </a></li> {% endcomment %}
     {% endfor %}
    </ul>
-</body>
-
-</html>
+   {% endblock  %}
 
