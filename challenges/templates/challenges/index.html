@@ -9,13 +9,14 @@
 </head>
 
 <body>
-    <h1>The Month is</h1>
-    {% if text == "may" %}
-    <h2> if tag used</h2>
-       
-    {% else  %}
-    <h2>{{ text|title}}</h2>
-    {% endif %}  
+   <ul>
+    {% url "month" month as url%}
+    {% for month in months %}
+    {% comment %} <li><a href= "{% url "month" month %}" >{{ month }} </a></li> {% endcomment %}
+    <li><a href= {{url}} >{{ month }} </a></li>
+    {% endfor %}
+   </ul>
 </body>
 
 </html>
+
