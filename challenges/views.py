@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
-from django.http import HttpResponse
+from django.http import Http404
 from django.urls import reverse
 from django.template.loader import render_to_string
 
@@ -42,5 +42,9 @@ def months(request, month):
 
 def months_number(request, month):
 
-    redirect_path = reverse("month", args=["month"])  # /challenges/month
-    return HttpResponseRedirect(redirect_path)
+    try:
+      redirect_path = reverse("month", args=["month"])  # /challenges/month
+      return HttpResponseRedirect(redirect_path)
+    except:
+      raise Http404()
+
