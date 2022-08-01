@@ -1,7 +1,9 @@
-from django.db import models
-
+from django.shortcuts import render
+from .models import Book
 # Create your models here.
 
-class Book(models.Model):
-  title = models.CharField(max_length=50)
-  rating = models.IntegerField()
+def index(request):
+  books = Book.objects.all()
+  return render(request, 'book_store/index.html',{
+    "books": books
+  })

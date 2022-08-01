@@ -1,0 +1,11 @@
+{% extends 'book_store/base.html' %}
+
+{% block title %}{% endblock title %}
+
+{% block content %}
+<ul>
+  {% for book in books  %}
+  <li> {{book.title}}</li>
+  {% endfor %}
+</ul>
+{% endblock content %}
