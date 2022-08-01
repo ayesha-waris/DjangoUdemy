@@ -11,7 +11,7 @@ class Book(models.Model):
         validators=[MinLengthValidator(1), MaxLengthValidator(5)])
     author = models.CharField(null=True, max_length=100)
     is_bestselling = models.BooleanField(default=False)
-    slug = models.SlugField(default="", null=False)
+    slug = models.SlugField(default="", null=False, db_index=True)
     # add methods
 
     def get_absolute_url(self):
@@ -19,6 +19,7 @@ class Book(models.Model):
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)
+        # self.slug = "-".join(slugify(self.title), slugify(self.id))
         super().save(*args, **kwargs)
 
     def __str__(self):

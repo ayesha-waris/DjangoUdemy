@@ -6,8 +6,12 @@
 <ul>
   {% for book in books  %}
   {% comment %} <li> <a href="{{ book.get_absolute_url}}"> {{book.title}} </a> </li> {% endcomment %}
-  <li> <a href="{% url "detail" book.id %}"> {{book.title}} </a> </li>
+  <li> <a href="{% url "detail" book.slug %}"> {{book.title}} </a> </li>
   {% comment %} {{book}} {% endcomment %}
   {% endfor %}
 </ul>
+<hr>
+<p>total book {{total_books}}</p>
+<p>average: {{avg_rating.rating__avg}}</p>
+
 {% endblock content %}
