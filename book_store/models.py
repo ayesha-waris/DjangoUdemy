@@ -11,14 +11,14 @@ class Book(models.Model):
       validators=[MinValueValidator(1), MaxValueValidator(5)])
     author = models.CharField(null=True, max_length=100)
     is_bestselling = models.BooleanField(default=False)
-    slug = models.SlugField(default="",editable=False, blank=True, null=False, db_index=True)
+    slug = models.SlugField(default="", blank=True, null=False, db_index=True)
     # add methods
 
     def get_absolute_url(self):
         return reverse("book_detail", args=[self.id])
 
     def save(self, *args, **kwargs):
-        self.slug = slugify(self.title)
+        # self.slug = slugify(self.title)
         # self.slug = "-".join(slugify(self.title), slugify(self.id))
         super().save(*args, **kwargs)
 
