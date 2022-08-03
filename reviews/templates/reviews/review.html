@@ -9,6 +9,9 @@
 <body>
   <form method="POST">
     {% csrf_token %}
+    {% if has_error %}
+    <p>Invalid name submission</p>
+    {% endif %}
     <label for="name"> Your Name</label>
     <input id="name" name="name" type="text">
     <button type="submit">Submit</button>
