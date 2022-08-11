@@ -20,5 +20,6 @@ import book_store
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include("book_store.url"))
+    path('',include("book_store.url")),
+    path('user/',include("users.urls"))
 ]
