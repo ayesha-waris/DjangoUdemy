@@ -9,5 +9,6 @@ urlpatterns = [
   path("user_info/", views.user_info),
   path("private_place/", views.private_place),
   path("accounts/", include("django.contrib.auth.urls")),
+  path("dashboard/", views.dashboard, name="dashboard"),
 ]
   

@@ -52,3 +52,6 @@ def user_info(request):
     """
 
     return HttpResponse(text, content_type="text/plain")
+
+def dashboard(request):
+    return render(request, "users/dashboard.html")
