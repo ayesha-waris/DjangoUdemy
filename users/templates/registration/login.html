@@ -1,7 +1,9 @@
+<!--users/templates/registration/login.html-->
+
 {% extends 'users/base.html' %}
 
 {% block content %}
-<h1>Login</h1>
+<h2>Login</h2>
 
 <form method="post">
     {% csrf_token %}
@@ -9,5 +11,5 @@
     <input type="submit" value="Login">
 </form>
 
-<a href="{% url 'listing' %}">All Blogs</a>
+<a href="{% url 'dashboard' %}">Back to dashboard</a>
 {% endblock %}
